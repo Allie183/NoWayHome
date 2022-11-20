@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/first.css">
+    <link rel="stylesheet" href="css/bg.css">
+    <title>一汪無際：No Way Home</title>
+</head>
+<body>
+    <div class="top">
+        <ul class="page">  
+            <a href="dog.html" style="text-decoration:none">
+            <li class="brand " >
+               <span>浪浪管理</span> 
+            </li></a>
+            <a href="volunteer.html" style="text-decoration:none">
+            <li class="brand ">
+               <span>志工管理</span> 
+            </li></a>
+            <a href="report.html" style="text-decoration:none">
+            <li class="brand ">
+              <span>通報管理</span> 
+            </li></a>
+            <a href="notice.html" style="text-decoration:none">
+            <li class="brand ">
+              <span>推播通知</span> 
+            </li></a>
+            <button class="button"   onclick="location.href='index.html'">登出</button>
+          </ul>
+
+    </div>
+
+    <div class="wrap">
+        <div class="left">
+            <ul class="page1">  
+                <li class="brand1 " onclick="openPage('reserve', this, '')" id="defaultOpen">
+                   <span >預約清單</span> 
+                </li>
+                <li class="brand1 " onclick="openPage('search', this, '')">
+                   <span >查詢紀錄</span> 
+                </li>
+              </ul>
+        </div>
+
+        <div class="right">
+          <div id="reserve" class="tabcontent">
+            <table class="table">
+              <tr>
+                <td width="20%" rowspan="2">編號1</td>
+                <td width="45%">會員編號A10068</td>
+                <td width="25%" rowspan="2">3小時前申請</td>
+                <td width="10%" rowspan="2">圖標</td>
+              </tr>
+              <tr >
+                <td>申請110.06.17 13:00-15:00</td>
+              </tr>
+            </table>
+            <table class="table">
+              <tr>
+                <td width="20%" rowspan="2">編號1</td>
+                <td width="45%">會員編號A10068</td>
+                <td width="25%" rowspan="2">3小時前申請</td>
+                <td width="10%" rowspan="2">圖標</td>
+              </tr>
+              <tr >
+                <td>申請110.06.17 13:00-15:00</td>
+              </tr>
+            </table>
+            
+  
+          </div>
+
+          <div id="search" class="tabcontent">
+            <div class="search">
+            <form action="">
+              <table class="table2">
+                <tr>
+                  <td width="20%">請輸入會員編號:</td>
+                  <td width="25%"><input type="text" class="input2" name="number" required="required"></td>
+                  <td ><input type="submit" class="searchbtn" value="查詢" ></td>
+                </tr>
+              </table>
+            
+            </form>
+            <table class="table">
+              <tr>
+                <td width="20%" >會員編號A10068</td>
+                <td width="45%" >110.06.17 13:00-15:00</td>
+                <td width="10%" >已完成</td>
+              </tr>
+            </table>
+            <table class="table">
+              <tr>
+                <td width="20%" >會員編號A20336</td>
+                <td width="45%" >110.07.08 15:00-17:00</td>
+                <td width="10%" >已預約</td>
+              </tr>
+            </table>
+            <table class="table">
+              <tr>
+                <td width="20%" >會員編號A00097</td>
+                <td width="45%" >109.11.17 12:00-14:00</td>
+                <td width="10%" >已取消</td>
+              </tr>
+            </table>
+            <table class="table">
+              <tr>
+                <td width="20%" >會員編號A18868</td>
+                <td width="45%" >110.01.13 08:00-10:00</td>
+                <td width="10%" >已取消</td>
+              </tr>
+            </table>
+            <table class="table">
+              <tr>
+                <td width="20%" >會員編號A01598</td>
+                <td width="45%" >109.04.27 13:00-15:00</td>
+                <td width="10%" >已完成</td>
+              </tr>
+            </table>
+            </div>
+
+          </div>
+           
+        </div>
+    </div>
+    
+    
+    <script>
+      function openPage(pageName, elmnt, color) {
+          // Hide all elements with class="tabcontent" by default */
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+          }
+      
+          // Remove the background color of all tablinks/buttons
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+          }
+      
+          // Show the specific tab content
+          document.getElementById(pageName).style.display = "block";
+      
+          // Add the specific color to the button used to open the tab content
+          elmnt.style.backgroundColor = color;
+      }
+      
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+      </script>
+
+
+</body>
+</html>

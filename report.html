@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/first.css">
+    <link rel="stylesheet" href="css/bg.css">
+    <title>一汪無際：No Way Home</title>
+</head>
+<body>
+    <div class="top">
+        <ul class="page">  
+            <a href="dog.html" style="text-decoration:none">
+            <li class="brand " >
+               <span>浪浪管理</span> 
+            </li></a>
+            <a href="volunteer.html" style="text-decoration:none">
+            <li class="brand ">
+               <span>志工管理</span> 
+            </li></a>
+            <a href="report.html" style="text-decoration:none">
+            <li class="brand ">
+              <span>通報管理</span> 
+            </li></a>
+            <a href="notice.html" style="text-decoration:none">
+            <li class="brand ">
+              <span>推播通知</span> 
+            </li></a>
+            <button class="button"   onclick="location.href='index.html'">登出</button>
+          </ul>
+
+    </div>
+
+    <div class="wrap">
+        <div class="left">
+            <ul class="page1">  
+                <li class="brand1 " onclick="openPage('wait', this, '')" id="defaultOpen">
+                   <span >待受理</span> 
+                </li>
+                <li class="brand1 " onclick="openPage('ing', this, '')">
+                   <span >處理中</span> 
+                </li>
+                <li class="brand1 " onclick="openPage('solved', this, '')">
+                  <span >已結案</span> 
+               </li>
+               <li class="brand1 " onclick="openPage('search', this, '')">
+                <span >查詢紀錄</span> 
+             </li>
+              </ul>
+        </div>
+
+        <div class="right">
+          <div id="wait" class="tabcontent">
+            <form action="back/complete.jsp">
+            <table class="table">
+              <tr>
+                <td width="20%" rowspan="2">通報編號1</td>
+                <td width="45%">會員編號A10068</td>
+                <td width="25%" rowspan="2">10分鐘前通報</td>
+                <td width="10%" rowspan="2"><input type="submit" class="waitbtn" value="已受理" ></td>
+              </tr>
+              <tr >
+                <td>位置：桃園市中壢區實踐路200號</td>
+              </tr>
+            </table>
+          </form>
+            
+            <table class="table">
+              <tr>
+                <td width="20%" rowspan="2">通報編號2</td>
+                <td width="45%">會員編號A20336</td>
+                <td width="25%" rowspan="2">1小時前通報</td>
+                <td width="10%" rowspan="2"><input type="submit" class="waitbtn" value="已受理" ></td>
+              </tr>
+              <tr >
+                <td>位置：桃園市中壢區中華路一段667號</td>
+              </tr>
+            </table>
+            
+          </div>
+          <div id="ing" class="tabcontent">
+            <form action="">
+            <table class="table">
+              <tr>
+                <td width="20%" rowspan="2">通報編號1</td>
+                <td width="45%">會員編號A10068</td>
+                <td width="25%" rowspan="2">10分鐘前通報</td>
+                <td width="10%" rowspan="2"><input type="submit" class="waitbtn" value="已完成" ></td>
+              </tr>
+              <tr >
+                <td>位置：桃園市中壢區實踐路200號</td>
+              </tr>
+            </table>
+            </form>
+            
+          </div>
+          <div id="solved" class="tabcontent">
+            <form action="">
+            <table class="table">
+              <tr>
+                <td width="20%" rowspan="2">通報編號1</td>
+                <td width="45%">會員編號A10068</td>
+                <td width="25%" rowspan="2">於110.09.03結案</td>
+                
+              </tr>
+              <tr >
+                <td>位置：桃園市中壢區實踐路200號</td>
+              </tr>
+            </table>
+            </form>
+            
+          </div>
+
+          <div id="search" class="tabcontent">
+            <div class="search">
+            <form action="">
+              <table class="table2">
+                <tr>
+                  <td width="20%">請輸入通報編號:</td>
+                  <td width="25%"><input type="text" class="input2" name="number" required="required"></td>
+                  <td ><input type="submit" class="searchbtn" value="查詢" ></td>
+                </tr>
+              </table>
+            
+            </form>
+            <form action="back/complete.jsp">
+              <table class="table">
+                <tr>
+                  <td width="20%" rowspan="2">通報編號1</td>
+                  <td width="45%">於110.06.06通報</td>
+                  <td width="25%" rowspan="2">最後更新於110.06.10</td>
+                  <td width="10%" rowspan="2">已結案</td>
+                </tr>
+                <tr >
+                  <td>位置：桃園市中壢區實踐路200號</td>
+                </tr>
+              </table>
+            </form>
+            <table class="table">
+              <tr>
+                <td width="20%" rowspan="2">通報編號2</td>
+                <td width="45%">於110.06.06通報</td>
+                <td width="25%" rowspan="2">最後更新於110.06.10</td>
+                <td width="10%" rowspan="2">已結案</td>
+              </tr>
+              <tr >
+                <td>位置：桃園市中壢區實踐路200號</td>
+              </tr>
+            </table>
+            
+            </div>
+
+          </div>
+           
+        </div>
+    </div>
+    
+    
+    <script>
+      function openPage(pageName, elmnt, color) {
+          // Hide all elements with class="tabcontent" by default */
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+          }
+      
+          // Remove the background color of all tablinks/buttons
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+          }
+      
+          // Show the specific tab content
+          document.getElementById(pageName).style.display = "block";
+      
+          // Add the specific color to the button used to open the tab content
+          elmnt.style.backgroundColor = color;
+      }
+      
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+      </script>
+
+
+</body>
+</html>
