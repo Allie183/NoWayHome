@@ -8,27 +8,144 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="top">
-        <ul class="page">  
-            <a href="dog.html" style="text-decoration:none">
-            <li class="brand ">
-               <span>浪浪管理</span> 
-            </li></a>
-            <a href="volunteer.html" style="text-decoration:none">
-            <li class="brand ">
-               <span>志工管理</span> 
-            </li></a>
-            <a href="report.html" style="text-decoration:none">
-            <li class="brand ">
-              <span>通報管理</span> 
-            </li></a>
-            <a href="notice.html" style="text-decoration:none">
-            <li class="brand ">
-              <span>推播通知</span> 
-            </li></a>
+  <div class="top">
+    <h1 class="logo">
+            <a href="index.html">
+                <span>一汪無際:No Way Home</span> 
+            </a>
+            <img src="img/logo.png" alt="">
+    </h1>
+    <ul class="page">  
+        <a href="dog.html" style="text-decoration:none">
+        <li class="brand " >
+           <span>浪浪管理</span> 
+        </li></a>
+        <a href="volunteer.html" style="text-decoration:none">
+        <li class="brand ">
+           <span>志工管理</span> 
+        </li></a>
+        <a href="report.html" style="text-decoration:none">
+        <li class="brand ">
+          <span>通報管理</span> 
+        </li></a>
+        <a href="notice.html" style="text-decoration:none">
+        <li class="brand ">
+          <span>推播通知</span> 
+        </li></a>
+        <button class="button"   onclick="location.href='index.html'">登出</button>
+      </ul>
+
+</div>
+<div class="wrap">
+    <div class="left">
+        <ul class="page1">  
+            
+            <li class="brand1 " onclick="openPage('add', this, '')" id="defaultOpen">
+               <span >新增</span> 
+            </li>
+            
+            <li class="brand1 " onclick="openPage('delete', this, '')">
+               <span >刪除</span> 
+            </li>
+            
+            <li class="brand1 " onclick="openPage('alter', this, '')">
+              <span >修改</span> 
+            </li>
+           
           </ul>
 
     </div>
+    <div class="right">
+      <div class="add">
+        <div id="add" class="tabcontent">
+          <form action="back/bg_addpd.jsp">
+            <div class="group">
+              <label class="label">通知編號:</label>  
+              <input type="text" class="input" name="number" required="required">
+            </div>
+            <div class="group">
+              <label class="label">標題:</label>  
+              <input type="text" class="input" name="number" required="required">
+            </div>
+            <div class="group">
+              <label class="label">內文:</label>  
+              <input type="text" class="input" name="name" required="required">
+            </div>
+            <div class="group">
+              <label class="label">照片:</label>
+              <input type="text" class="input" name="fm" required="required">
+            </div>
+            <div class="group">
+              <input type="submit" class="button1" value="確定新增" >
+            </div>
+            
+          </form>
+       </div>
+
+       <div id="alter" class="tabcontent">
+          <form action="back/bg_updatepd.jsp">
+            <div class="group">
+              <label class="label">通知編號:</label>
+              <input class="input" type="text" name="revise" placeholder="" >
+            </div>
+            <div class="group">
+              <input class="button1" type="submit" value="選擇" >
+            </div>
+            
+                 
+                
+          </form>
+       </div>
+
+       <div id="delete" class="tabcontent">
+        <form action="back/bg_deletepd.jsp">
+          <div class="group">
+            <label class="label">通知編號:</label>
+            <input class="input" type="text" name="number" id="">
+          </div>
+          <div class="group">
+            <a href=""><input class="button1" type="submit" value="確認刪除" ></a>
+          </div>
+          
+        </form>
+       </div>
+
+       
+        <div class="hr"></div>
+    </div>
+    
+
+    </div>
+
+    </div>
+</div>
+
+
+<script>
+  function openPage(pageName, elmnt, color) {
+      // Hide all elements with class="tabcontent" by default */
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+      }
+  
+      // Remove the background color of all tablinks/buttons
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+      }
+  
+      // Show the specific tab content
+      document.getElementById(pageName).style.display = "block";
+  
+      // Add the specific color to the button used to open the tab content
+      elmnt.style.backgroundColor = color;
+  }
+  
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  </script>
    
     
 

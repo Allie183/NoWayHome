@@ -33,49 +33,52 @@
         <div class="right">
             <div class="login-wrap" >
                 <div class="login-html">
-                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">登入</label>
+                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">註冊</label>
                     <div class="login-form">
-                        
+                        <form action="back/login.jsp">
                         <div class="sign-in-htm">
                             <div class="group">
-                                <label for="user" class="label">Email</label>
-                                <input id="user" type="email" class="input" name="id" required='required'>
+                                <label for="user" class="label">帳號</label>
+                                <input id="user" type="email" class="input" name="account" required='required'>
                             </div>
                             <div class="group">
-                                <label for="pass" class="label">Password</label>
+                                <label for="pass" class="label">密碼</label>
                                 <input id="pass" type="password" class="input" data-type="password" name="pwd" required='required'>
                             </div>
                             
                             <div class="group">
                             <a href="dog.html">
-                                <input type="submit" class="button" value="Sign In">
+                                <input type="submit" class="button" value="登入">
                             </a>
                             </div>
                             <div class="hr"></div>
                         </div>
-                        
+                        </form>
+
+                        <form action="back/memberadd.jsp">
                         <div class="sign-up-htm">
                             
                             <div class="group">
-                                <label for="user" class="label">Username</label>
-                                <input id="user" type="text" class="input" name="name" required='required'>
+                                <label for="user" class="label">設定帳號：</label>
+                                <input id="user" type="text" class="input" name="account" required='required'>
                             </div>
                             <div class="group">
-                                <label for="pass" class="label">Password</label>
+                                <label for="pass" class="label">設定密碼：</label>
                                 <input id="pass" type="password" class="input" data-type="password" name="pwd" required='required'>
                             </div>
                             
                             <div class="group">
-                                <label for="pass" class="label">Email Address</label>
-                                <input id="pass" type="email" class="input" name="id" required='required'>
+                                <label for="pass" class="label">Email</label>
+                                <input id="pass" type="email" class="input" name="email" required='required'>
                             </div>
                             <div class="group">
-                                <input type="submit" class="button" value="Sign Up">
+                                <input type="submit" class="button" value="登入">
                             </div>
                             <div class="hr"></div>
                             
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
